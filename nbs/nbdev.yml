@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "airt-keras"
+  site-url: "https://airtai.github.io/airt-keras"
+  description: "Keras extension"
+  repo-branch: main
+  repo-url: "https://github.com/airtai/airt-keras"
