@@ -122,9 +122,10 @@ docker run --rm $GPU_PARAMS -u $(id -u):$(id -g) \
     --security-opt label=disable \
     -e JUPYTER_CONFIG_DIR=/root/.jupyter \
     -p $AIRT_JUPYTER_PORT:8888 -p $AIRT_TB_PORT:6006 -p $AIRT_DASK_PORT:8787 -p $AIRT_DOCS_PORT:4000 \
-    -v $AIRT_DATA:/work/data -v $AIRT_PROJECT:/tf/airt \
+    -v $AIRT_DATA:/work/data -v $AIRT_PROJECT:/tf/airt-keras \
     -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc/sudoers:/etc/sudoers -v /etc/shadow:/etc/shadow \
     -v $HOME/.ssh:$HOME/.ssh -v $HOME/.gitconfig:/root/.gitconfig -v $HOME/.aws:/root/.aws \
+    -w /tf/airt-keras \
     -e USER=$USER -e USERNAME=$USERNAME \
     -e AZURE_SUBSCRIPTION_ID=$AZURE_SUBSCRIPTION_ID -e AZURE_TENANT_ID=$AZURE_TENANT_ID \
     -e AZURE_CLIENT_ID=$AZURE_CLIENT_ID -e AZURE_CLIENT_SECRET=$AZURE_CLIENT_SECRET \
